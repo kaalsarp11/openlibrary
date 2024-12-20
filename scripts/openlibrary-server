@@ -106,7 +106,7 @@ class BaseWSGIServer(Application):
 class OLWSGIServer(BaseWSGIServer):
     def get_wsgi_app(self):
         from infogami import config
-        from infogami.utils import delegate
+        from infogami.utils import delegate # type: ignore
 
         return delegate.app.wsgifunc(*config.middleware)
 
